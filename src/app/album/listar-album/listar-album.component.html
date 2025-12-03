@@ -1,1 +1,22 @@
-<p>listar-album works!</p>
+<div class="album-list">
+	<h2 *ngIf="band; else allHeader">Albums of <a [routerLink]="['/bandas', band.id]">{{ band.name }}</a></h2>
+	<app-spinner *ngIf="loading"></app-spinner>
+	<div *ngIf="error" class="error">{{ error }}</div>
+	<ng-template #allHeader>
+		<h2>Albums</h2>
+	</ng-template>
+
+	<p *ngIf="!loading && filtered.length === 0">No albums found.</p>
+
+	<ul *ngIf="filtered.length > 0" class="albums">
+		<li *ngFor="let a of filtered" class="album-item">
+			<div class="album-info">
+				<strong><a [routerLink]="['/albums', a.id]">{{ a.title }}</a></strong>
+				<span class="year">({{ a.releaseYear }})</span>
+			</div>
+			<div class="album-actions">
+				<button [routerLink]="['/albums', a.id]">View</button>
+			</div>
+		</li>
+	</ul>
+</div>

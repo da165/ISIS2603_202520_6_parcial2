@@ -10,9 +10,12 @@ import { ListarAlbumComponent } from './album/listar-album/listar-album.componen
 import { DetailAlbumComponent } from './album/detail-album/detail-album.component';
 import { ListarCancionesComponent } from './canciones/listar-canciones/listar-canciones.component';
 import { DetailCancionesComponent } from './canciones/detail-canciones/detail-canciones.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, ListarBandasComponent, DetailBandasComponent, ListarAlbumComponent, DetailAlbumComponent, ListarCancionesComponent, DetailCancionesComponent],
+  declarations: [AppComponent, HeaderComponent, SpinnerComponent, HomeComponent, ListarBandasComponent, DetailBandasComponent, ListarAlbumComponent, DetailAlbumComponent, ListarCancionesComponent, DetailCancionesComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,12 @@
-<p>detail-bandas works!</p>
+<div class="band-detail" *ngIf="band; else loading">
+	<h2>{{ band.name }}</h2>
+	<p><strong>Genre:</strong> {{ band.genre }}</p>
+	<p><strong>Formed:</strong> {{ band.yearFormed }}</p>
+	<p><strong>Songs count:</strong> {{ band.songsCount }}</p>
+
+	<button (click)="viewAlbums()">View Albums</button>
+</div>
+
+<ng-template #loading>
+	<p>Loading band...</p>
+</ng-template>

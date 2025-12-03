@@ -1,1 +1,21 @@
-<p>listar-bandas works!</p>
+<div class="band-list">
+	<h2>Bands</h2>
+
+	<app-spinner *ngIf="loading"></app-spinner>
+	<p *ngIf="error" class="error">{{ error }}</p>
+
+	<ul *ngIf="!loading && bandas.length > 0" class="bands">
+		<li *ngFor="let b of bandas" class="band-item">
+			<div class="band-info">
+				<strong class="link"><a [routerLink]="['/bandas', b.id]">{{ b.name }}</a></strong>
+				<span class="genre">{{ b.genre }}</span>
+			</div>
+			<div class="band-actions">
+				<button [routerLink]="['/bandas', b.id]">Details</button>
+				<button [routerLink]="['/albums']" [queryParams]="{ bandId: b.id }">Albums</button>
+			</div>
+		</li>
+	</ul>
+
+	<p *ngIf="!loading && bandas.length === 0">No bands available.</p>
+</div>

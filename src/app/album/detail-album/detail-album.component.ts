@@ -1,12 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { album } from '../models/models';
 
 @Component({
   selector: 'app-detail-album',
   templateUrl: './detail-album.component.html',
-  styleUrl: './detail-album.component.css'
+  styleUrls: ['./detail-album.component.css']
 })
 export class DetailAlbumComponent {
-  @Input() album: any;
+  @Input() album?: album | null;
   @Output() close = new EventEmitter<void>();
 
   exportSongs() {
@@ -22,7 +23,8 @@ export class DetailAlbumComponent {
     }));
 
     const csvString = this.convertToCSV(csvData);
-    this.downloadCSV(csvString, `${this.album.name}_songs.csv`);
+    const filename = this.album && this.album.title ? `${this.album.title}_songs.csv` : 'songs.csv';
+    this.downloadCSV(csvString, filename);
   }
 
   closeDetail() {

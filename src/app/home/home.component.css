@@ -1,0 +1,11 @@
+.home { padding: 16px; }
+.artists-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.artist-card { background: #fff; padding: 8px; border-radius: 6px; text-align:center; box-shadow: 0 1px 2px rgba(0,0,0,0.05);} 
+.artist-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+.artist-card h3 { margin: 8px 0 0; font-size: 1rem; }
+.actions { margin-top: 16px; }
+.error { color: #b00020; }
+
+@media (max-width: 600px) {
+  .artists-grid { grid-template-columns: repeat(2, 1fr); }
+}

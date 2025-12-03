@@ -6,6 +6,7 @@ import { ListarBandasComponent } from './bandas/listar-bandas/listar-bandas.comp
 import { DetailBandasComponent } from './bandas/detail-bandas/detail-bandas.component';
 import { ListarCancionesComponent } from './canciones/listar-canciones/listar-canciones.component';
 import { DetailCancionesComponent } from './canciones/detail-canciones/detail-canciones.component'; 
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: 'albums', component: ListarAlbumComponent},
@@ -14,8 +15,8 @@ const routes: Routes = [
   {path: 'bandas/:id', component: DetailBandasComponent},
   {path: 'canciones', component: ListarCancionesComponent},
   {path: 'canciones/:id', component: DetailCancionesComponent},
-  {path: '', redirectTo: '/bandas', pathMatch: 'full'},
-  {path: '**', redirectTo: '/bandas' }
+  {path: '', component: HomeComponent},
+  {path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -1,0 +1,38 @@
+.album-list {
+	padding: 12px;
+}
+.albums {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.album-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 12px;
+	border-bottom: 1px solid #eee;
+}
+.album-info strong {
+	display: block;
+}
+.album-info .year {
+	color: #666;
+	font-size: 0.9rem;
+}
+.album-actions button {
+	background: #1976d2;
+	color: white;
+	border: none;
+	padding: 6px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	.album-item {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.album-actions { margin-top: 8px; }
+}

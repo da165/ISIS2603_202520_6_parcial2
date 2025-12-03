@@ -1,0 +1,18 @@
+<div class="home">
+  <h1>Artists</h1>
+  <app-spinner *ngIf="loading"></app-spinner>
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <div class="artists-grid" *ngIf="!loading && artists.length > 0">
+    <div class="artist-card" *ngFor="let a of artists">
+      <img *ngIf="a.image" [src]="a.image" [alt]="a.name" />
+      <h3>{{ a.name }}</h3>
+    </div>
+  </div>
+
+  <p *ngIf="!loading && artists.length === 0">No artists found.</p>
+
+  <div class="actions">
+    <button (click)="viewBandList()">Browse Bands</button>
+  </div>
+</div>
